@@ -148,8 +148,11 @@ public class Osoba {
      * @return Pořadí dítěte.
      */
     private Integer kolikateJe(String jmeno) {
-        //TODO
-        return 0;
+        int index = deti.indexOf(jmeno);
+        if (index < 0) {
+            return null;
+        }
+        return index + 1;
     }
 
     /**
