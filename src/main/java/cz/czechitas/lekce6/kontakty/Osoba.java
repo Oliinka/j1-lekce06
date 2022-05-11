@@ -75,7 +75,7 @@ public class Osoba {
      * @param email
      */
     private void pridejEmail(String email) {
-        //TODO
+        emaily.add(email);
     }
 
     /**
@@ -85,8 +85,7 @@ public class Osoba {
      * @return
      */
     private boolean obsahujeEmail(String email) {
-        //TODO
-        return false;
+        return emaily.contains(email);
     }
 
     /**
@@ -95,7 +94,7 @@ public class Osoba {
      * @param telefon
      */
     private void pridejTelefon(String telefon) {
-        //TODO
+        telefony.add(telefon);
     }
 
     /**
@@ -104,22 +103,21 @@ public class Osoba {
      * @param telefon
      */
     private void odstranTelefon(String telefon) {
-        //TODO
+        telefony.remove(telefon);
     }
 
     /**
      * Zjistí, zda je seznam telefonů prázdný.
      */
     private boolean jeSeznamTelefonuPrazdny() {
-        //TODO
-        return false;
+        return telefony.isEmpty();
     }
 
     /**
      * Smaže všechny telefony ze seznamu.
      */
     private void smazVsechnyTelefony() {
-        //TODO
+        telefony.clear();
     }
 
     /**
@@ -128,7 +126,7 @@ public class Osoba {
      * @param jmeno Křestní jméno dítěte.
      */
     private void pridejDite(String jmeno) {
-        //TODO
+        deti.add(jmeno);
     }
 
     /**
@@ -138,8 +136,7 @@ public class Osoba {
      * @return
      */
     private boolean jeNaSeznamuDite(String jmeno) {
-        //TODO
-        return false;
+        return deti.contains(jmeno);
     }
 
     /**
@@ -161,13 +158,24 @@ public class Osoba {
      * Jména dětí jsou vypsána v pořadí, v jakém jsou uvedena v seznamu.
      */
     private void vypisDeti() {
-        //TODO bonusový úkol
-        //Pro výpis jednoho dítěte se použije System.out.println()
-        //Pro průchod celým seznamem se použije for each cyklus (s dvojtečkou) – po zadání "deti.for" IntelliJ Ieda napoví.
-        //Pozor, nejde o metodu forEach()!
+        for (String dite : deti) {
+            System.out.println(dite);
+        }
     }
     //endregion
 
+
+    /**
+     * Vrací pořadové číslo, kolikáté je uvedené dítě na seznamu.
+     *
+     * Vrací pořadí v běžném číslování, tj. první dítě je 1. Pokud dítě na seznamu není, vrací -1.
+     *
+     * @param jmeno Křestní jméno hledaného dítěte.
+     * @return Pořadí dítěte.
+     */
+    private int kolikateJe(String jmeno) {
+        return deti.indexOf(jmeno);
+    }
 
     //region Implementace osoby.
     public String getJmeno() {
