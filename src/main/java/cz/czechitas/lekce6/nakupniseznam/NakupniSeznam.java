@@ -29,7 +29,7 @@ public class NakupniSeznam {
     private void naplnSeznam() {
         seznam.add(new Polozka("máslo", 1, "ks"));
         seznam.add(new Polozka("mrkev", 5, "ks"));
-        seznam.add(new Polozka("sýr", 10, "dag"));
+        seznam.add(new Polozka("sýr", 10, "dg"));
         seznam.add(new Polozka("brokolice", 500, "g"));
         seznam.add(new Polozka("vejce", 10, "ks"));
     }
