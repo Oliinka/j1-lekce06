@@ -1,19 +1,16 @@
 package cz.czechitas.lekce6.kontakty;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Informace o osobě.
  */
 public class Osoba {
-    private String jmeno;
-    private String prijmeni;
-
     private final Set<String> emaily = new HashSet<>();
     private final Set<String> telefony = new HashSet<>();
-
     private final List<String> deti = new ArrayList<>();
+    private String jmeno;
+    private String prijmeni;
 
     public Osoba(String jmeno, String prijmeni) {
         this.jmeno = Objects.requireNonNull(jmeno);
@@ -71,8 +68,10 @@ public class Osoba {
     }
 
     //region Metody k implementaci.
+
     /**
      * Přidá uvedený e-mail do seznamu e-mailů.
+     *
      * @param email
      */
     private void pridejEmail(String email) {
@@ -92,6 +91,7 @@ public class Osoba {
 
     /**
      * Přidá telefon na seznam telefonů.
+     *
      * @param telefon
      */
     private void pridejTelefon(String telefon) {
@@ -100,6 +100,7 @@ public class Osoba {
 
     /**
      * Odstraní telefon ze seznamu telefonů.
+     *
      * @param telefon
      */
     private void odstranTelefon(String telefon) {
@@ -123,6 +124,7 @@ public class Osoba {
 
     /**
      * Přidá do seznamu další dítě.
+     *
      * @param jmeno Křestní jméno dítěte.
      */
     private void pridejDite(String jmeno) {
@@ -131,6 +133,7 @@ public class Osoba {
 
     /**
      * Vrací údaj, zda dané dítě je uvedené v seznamu dětí.
+     *
      * @param jmeno Křestní jméno hledaného dítěte.
      * @return
      */
@@ -141,7 +144,7 @@ public class Osoba {
 
     /**
      * Vrací pořadové číslo, kolikáté je uvedené dítě na seznamu.
-     *
+     * <p>
      * Vrací pořadí v běžném číslování, tj. první dítě je 1. Pokud dítě na seznamu není, vrací {@code null}.
      *
      * @param jmeno Křestní jméno hledaného dítěte.
@@ -154,7 +157,7 @@ public class Osoba {
 
     /**
      * Vypíše jména všech dětí na standardní výstup.
-     *
+     * <p>
      * Jména dětí jsou vypsána v pořadí, v jakém jsou uvedena v seznamu.
      */
     private void vypisDeti() {
