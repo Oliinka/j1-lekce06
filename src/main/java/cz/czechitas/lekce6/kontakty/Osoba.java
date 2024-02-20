@@ -1,5 +1,7 @@
 package cz.czechitas.lekce6.kontakty;
 
+import cz.czechitas.lekce6.nakupniseznam.Polozka;
+
 import java.util.*;
 
 /**
@@ -75,6 +77,7 @@ public class Osoba {
      * @param email
      */
     private void pridejEmail(String email) {
+        emaily.add(email);
         //TODO
     }
 
@@ -85,8 +88,9 @@ public class Osoba {
      * @return
      */
     private boolean obsahujeEmail(String email) {
+        return emaily.contains(email);
         //TODO
-        return false;
+       // return false;
     }
 
     /**
@@ -95,6 +99,7 @@ public class Osoba {
      * @param telefon
      */
     private void pridejTelefon(String telefon) {
+        telefony.add(telefon);
         //TODO
     }
 
@@ -104,6 +109,7 @@ public class Osoba {
      * @param telefon
      */
     private void odstranTelefon(String telefon) {
+        telefony.clear();
         //TODO
     }
 
@@ -111,14 +117,16 @@ public class Osoba {
      * Zjistí, zda je seznam telefonů prázdný.
      */
     private boolean jeSeznamTelefonuPrazdny() {
+return telefony.isEmpty();
         //TODO
-        return false;
+        //return false;
     }
 
     /**
      * Smaže všechny telefony ze seznamu.
      */
     private void smazVsechnyTelefony() {
+        telefony.clear();
         //TODO
     }
 
@@ -128,6 +136,7 @@ public class Osoba {
      * @param jmeno Křestní jméno dítěte.
      */
     private void pridejDite(String jmeno) {
+        deti.add(jmeno);
         //TODO
     }
 
@@ -138,8 +147,9 @@ public class Osoba {
      * @return
      */
     private boolean jeNaSeznamuDite(String jmeno) {
+        return deti.contains(jmeno);
         //TODO
-        return false;
+        //return false;
     }
 
     /**
@@ -151,8 +161,10 @@ public class Osoba {
      * @return Pořadí dítěte.
      */
     private Integer kolikateJe(String jmeno) {
+        int index=deti.indexOf(jmeno);
+        return (index != -1) ? index +1: null;
         //TODO
-        return 0;
+        //return 0;
     }
 
     /**
@@ -161,6 +173,11 @@ public class Osoba {
      * Jména dětí jsou vypsána v pořadí, v jakém jsou uvedena v seznamu.
      */
     private void vypisDeti() {
+        System.out.println("Jména dětí:");
+        for (String dite: deti) {
+            System.out.println(dite);
+        }
+
         //TODO bonusový úkol
         //Pro výpis jednoho dítěte se použije System.out.println()
         //Pro průchod celým seznamem se použije for each cyklus (s dvojtečkou) – po zadání "deti.for" IntelliJ Ieda napoví.

@@ -1,7 +1,8 @@
 package cz.czechitas.lekce6.nakupniseznam;
 
-import java.util.ArrayList;
-import java.util.List;
+import cz.czechitas.lekce6.kontakty.Osoba;
+
+import java.util.*;
 
 public class NakupniSeznam {
     private final List<Polozka> seznam = new ArrayList<>();
@@ -27,23 +28,45 @@ public class NakupniSeznam {
      * Naplní seznam alespoň 4 položkami.
      */
     private void naplnSeznam() {
+
+        /*List<String>jmena = new ArrayList<>();
+        jmena.add(4);
+        jmena.get(3);*/
+
+        /*Set<Integer>prvocisla = ;*/
+/*
+        Map<String, Osoba> osoby = new HashMap<>();
+        osoby.put("Frantisek Novak", Osoba("Frantisek", "Novak"));
+*/
+        Polozka vino = new Polozka("Vino", 2,"lahev");
+        seznam.add(vino);
+        seznam.add(new Polozka("ocet", 1, "l"));
+        seznam.add(new Polozka("maslo", 250, "g"));
+        seznam.add(new Polozka("testoviny", 1, "kg"));
         //TODO
     }
-
     /**
      * Vrátí třetí položku ze seznamu.
      *
      * @return
      */
     private Polozka ziskejTretiPolozku() {
-        //TODO
-        return null;
+
+        if (seznam.size() >=3){
+            return seznam.get(2);
+        }else {
+            return null;
+        }
     }
 
     /**
      * Smaže druhou položku ze seznamu.
      */
     private void smazDruhouPolozku() {
+        Polozka druhaPolozka = seznam.get(1);
+        seznam.remove(1);
+        System.out.println("Odebrána druhá položka seznamu, " + druhaPolozka+".");
+
         //TODO
     }
 
@@ -51,6 +74,9 @@ public class NakupniSeznam {
      * Přidá novou položku na konec seznamu.
      */
     private void pridejDalsiPolozku() {
+        Polozka novaPolozka = new Polozka("káva", 1, "kg");
+        seznam.add(novaPolozka);
+        System.out.println("Přidána další položka:" + novaPolozka);
         //TODO
     }
 
